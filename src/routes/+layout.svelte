@@ -36,7 +36,6 @@
 				<a
 					class="btn hover:variant-soft-primary"
 					href="/portfolio"
-					target="_blank"
 					rel="noreferrer"
 				>
 					Portfolio
@@ -44,7 +43,6 @@
 				<a
 					class="btn hover:variant-soft-primary"
 					href="/blog"
-					target="_blank"
 					rel="noreferrer"
 				>
 					Blog
