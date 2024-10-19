@@ -2,13 +2,14 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { section_data } from '$lib/assets/data';
 	import Section from '$lib/components/Section.svelte';
+	import { Linkedin, Github, Mail } from 'lucide-svelte';
 </script>
 
 <svelte:head>
 	<title>Long Pham</title>
 </svelte:head>
 <div class="container h-full mx-auto flex justify-center items-center p-10">
-	<div class="space-y-8 md:space-y-12 flex flex-col items-center text-justify md:w-4/5 lg:w-3/5 !scroll-smooth">
+	<div class="space-y-8 md:space-y-12 flex flex-col items-center text-justify md:w-4/5 lg:w-3/5">
 		<h1 class="h1 font-serif text-5xl my-8">Long Pham</h1>
 		<div>
 			<Avatar
@@ -21,31 +22,35 @@
 			/>
 			<p>
 				I'm a software engineer who enjoys solving problems and the amount of dopamine that it
-				brings. I have 2 years of experience in the industry, working as both a desktop app developer
-				and a web developer at
+				brings. I have 2 years of experience in the industry, working as both a desktop app
+				developer and a web developer at
 				<a class="anchor" target="_blank" href="https://digia.com/en" rel="external">Digia</a> 🇫🇮.
 				In my free time, I fancy a bit of open source browsing, investing in tech startups and
-				listening to tech podcasts. I welcome emails to
-				<a class="anchor" target="_blank" href="mailto:longphamduy2002@gmail.com" rel="external"
-					>longphamduy2002@gmail.com</a
-				>. You can also find me on
-				<a
-					class="anchor"
-					target="_blank"
-					href="https://www.linkedin.com/in/duy-long-pham/"
-					rel="external">LinkedIn</a
-				>,
-				<a class="anchor" target="_blank" href="https://github.com/phamduylong" rel="external"
-					>GitHub</a
-				>
-				and
-				<a class="anchor" target="_blank" href="https://leetcode.com/u/longphd/" rel="external"
-					>LeetCode</a
-				>.
+				listening to tech podcasts. I'm open to new opportunities and challenges, feel free to reach
+				out <a class="anchor" href="#contact">here</a>.
 			</p>
 		</div>
 		{#each section_data as section}
 			<Section data={section} />
 		{/each}
+
+		<div class="select-none" id="contact">
+			<a
+				class="anchor"
+				href="https://www.linkedin.com/in/duy-long-pham/"
+				target="_blank"
+				rel="external"
+			>
+				<Linkedin class="w-5 h-5 md:w-6 md:h-6 inline-block" />
+			</a>
+
+			<a class="anchor" href="https://github.com/phamduylong/" target="_blank" rel="external"
+				><Github class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+			>
+
+			<a class="anchor" href="mailto:longphamduy2002@gmail.com" target="_blank" rel="external"
+				><Mail class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+			>
+		</div>
 	</div>
 </div>
