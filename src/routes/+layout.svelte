@@ -30,23 +30,11 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<a class="text-xl uppercase select-none font-bold" href='/'>LONGPH.DEV</a>
+				<a class="text-xl uppercase select-none font-bold" href="/">LONGPH.DEV</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
-					class="btn hover:variant-soft-primary"
-					href="/portfolio"
-					rel="noreferrer"
-				>
-					Portfolio
-				</a>
-				<a
-					class="btn hover:variant-soft-primary"
-					href="/blog"
-					rel="noreferrer"
-				>
-					Blog
-				</a>
+				<a class="btn hover:variant-soft-primary" href="/portfolio" rel="noreferrer"> Portfolio </a>
+				<a class="btn hover:variant-soft-primary" href="/blog" rel="noreferrer"> Blog </a>
 				<a
 					class="btn hover:variant-soft-primary"
 					href="https://github.com/phamduylong"
