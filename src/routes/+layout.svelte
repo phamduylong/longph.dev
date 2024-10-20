@@ -1,6 +1,8 @@
 <script>
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { storeTheme } from '$lib/stores/themeStore';
+	import { browser } from '$app/environment';
 
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
@@ -19,26 +21,83 @@
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
-	import { storePopup,  Drawer, getDrawerStore, initializeStores } from '@skeletonlabs/skeleton';
-	import { Menu } from 'lucide-svelte';
+	import {
+		storePopup,
+		Drawer,
+		getDrawerStore,
+		initializeStores,
+		popup,
+		LightSwitch
+	} from '@skeletonlabs/skeleton';
+	import { Menu, Palette } from 'lucide-svelte';
+	import { enhance } from '$app/forms';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 	initializeStores();
 	const drawerStore = getDrawerStore();
-	const drawerSettings = {
-	id: 'menu-drawer',
-	width: 'w-full',
-	height: 'h-1/4',
-	padding: 'p-4',
-	rounded: 'rounded-xl',
-};
+
+	// Menu Drawer Settings
+	const menuDrawerSettings = {
+		id: 'menu-drawer',
+		width: 'w-full',
+		height: 'h-40',
+		padding: 'p-4',
+		rounded: 'rounded-xl'
+	};
+
+	// Theme Settings
+	const themes = Object.freeze([
+		{ type: 'skeleton', name: 'Skeleton', icon: '💀' },
+		{ type: 'wintry', name: 'Wintry', icon: '🌨️' },
+		{ type: 'modern', name: 'Modern', icon: '🤖' },
+		{ type: 'rocket', name: 'Rocket', icon: '🚀' },
+		{ type: 'seafoam', name: 'Seafoam', icon: '🧜‍♀️' },
+		{ type: 'vintage', name: 'Vintage', icon: '📺' },
+		{ type: 'sahara', name: 'Sahara', icon: '🏜️' },
+		{ type: 'hamlindigo', name: 'Hamlindigo', icon: '👔' },
+		{ type: 'gold-nouveau', name: 'Gold Nouveau', icon: '💫' },
+		{ type: 'crimson', name: 'Crimson', icon: '⭕' }
+	]);
+
+	/**
+	 * Set body `data-theme` attribute based on the theme selected
+	 * @param param0 {{ formData: FormData }}
+	 */
+	const setTheme = ({ formData }) => {
+		const theme = formData.get('theme')?.toString();
+		if (theme) {
+			document.body.setAttribute('data-theme', theme);
+			$storeTheme = theme;
+		}
+	};
+	// Set body `data-theme` based on current theme status
+	storeTheme.subscribe(setBodyThemeAttribute);
+	function setBodyThemeAttribute() {
+		if (!browser) return;
+		document.body.setAttribute('data-theme', $storeTheme);
+	}
 </script>
+
 <Drawer>
-	{#if $drawerStore.id === "menu-drawer"}
+	{#if $drawerStore.id === 'menu-drawer'}
 		<div class="flex flex-col items-center justify-center h-full px-4">
-			<a class="btn hover:variant-soft-primary w-full" href="/portfolio" on:click={() => drawerStore.close()} rel="noreferrer"> Portfolio </a>
+			<a
+				class="btn hover:variant-soft-primary w-full"
+				href="/portfolio"
+				on:click={() => drawerStore.close()}
+				rel="noreferrer"
+			>
+				Portfolio
+			</a>
 			<hr class="w-full my-1" />
-			<a class="btn hover:variant-soft-primary w-full" href="/blog" on:click={() => drawerStore.close()} rel="noreferrer"> Blog </a>
-			
+			<a
+				class="btn hover:variant-soft-primary w-full"
+				href="/blog"
+				on:click={() => drawerStore.close()}
+				rel="noreferrer"
+			>
+				Blog
+			</a>
+
 			<hr class="w-full my-1" />
 			<a
 				class="btn hover:variant-soft-primary w-full"
@@ -62,7 +121,19 @@
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<div class="hidden md:block">
-					<a class="btn hover:variant-soft-primary" href="/portfolio" rel="noreferrer"> Portfolio </a>
+					<!-- Theme -->
+					<div class="inline-block">
+						<!-- trigger -->
+						<button
+							class="btn hover:variant-soft-primary"
+							use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
+						>
+							<span class="hidden md:inline-block">Theme </span>
+						</button>
+					</div>
+					<a class="btn hover:variant-soft-primary" href="/portfolio" rel="noreferrer">
+						Portfolio
+					</a>
 					<a class="btn hover:variant-soft-primary" href="/blog" rel="noreferrer"> Blog </a>
 					<a
 						class="btn hover:variant-soft-primary"
@@ -74,10 +145,49 @@
 					</a>
 				</div>
 
-				<button class="md:hidden" on:click={() => drawerStore.open(drawerSettings)}>
-					<Menu
-					/>
-				</button>
+				<div class="md:hidden space-x-12 !mr-4">
+					<button
+						class="inline-block"
+						use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
+						title="Theme switch button"><Palette /></button
+					>
+					<button
+						class="inline-block"
+						title="Menu open button"
+						on:click={() => drawerStore.open(menuDrawerSettings)}><Menu /></button
+					>
+				</div>
+
+				<!-- popup -->
+				<div class="fixed card p-4 w-44 md:w-60 shadow-xl z-40" role="dialog" data-popup="theme">
+					<div class="space-y-4">
+						<section class="flex justify-between items-center">
+							<h6 class="h6">Mode</h6>
+							<LightSwitch />
+						</section>
+						<hr />
+						<nav class="list-nav p-4 -m-4 max-h-64 lg:max-h-[500px] overflow-y-auto">
+							<form action="/?/setTheme" method="POST" use:enhance={setTheme}>
+								<ul>
+									{#each themes as { icon, name, type }}
+										<li>
+											<button
+												class="option w-full h-full"
+												type="submit"
+												name="theme"
+												value={type}
+												class:bg-primary-active-token={$storeTheme === type}
+											>
+												<span>{icon}</span>
+												<span class="flex-auto text-left">{name}</span>
+											</button>
+										</li>
+									{/each}
+								</ul>
+							</form>
+						</nav>
+					</div>
+				</div>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
