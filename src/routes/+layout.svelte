@@ -19,11 +19,39 @@
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
-	import { storePopup } from '@skeletonlabs/skeleton';
-	import { goto } from '$app/navigation';
+	import { storePopup,  Drawer, getDrawerStore, initializeStores } from '@skeletonlabs/skeleton';
+	import { Menu } from 'lucide-svelte';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+	initializeStores();
+	const drawerStore = getDrawerStore();
+	const drawerSettings = {
+	id: 'menu-drawer',
+	width: 'w-full',
+	height: 'h-1/4',
+	padding: 'p-4',
+	rounded: 'rounded-xl',
+};
 </script>
-
+<Drawer>
+	{#if $drawerStore.id === "menu-drawer"}
+		<div class="flex flex-col items-center justify-center h-full px-4">
+			<a class="btn hover:variant-soft-primary w-full" href="/portfolio" on:click={() => drawerStore.close()} rel="noreferrer"> Portfolio </a>
+			<hr class="w-full my-1" />
+			<a class="btn hover:variant-soft-primary w-full" href="/blog" on:click={() => drawerStore.close()} rel="noreferrer"> Blog </a>
+			
+			<hr class="w-full my-1" />
+			<a
+				class="btn hover:variant-soft-primary w-full"
+				href="https://github.com/phamduylong"
+				target="_blank"
+				rel="noreferrer"
+				on:click={() => drawerStore.close()}
+			>
+				GitHub
+			</a>
+		</div>
+	{/if}
+</Drawer>
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">
@@ -33,16 +61,23 @@
 				<a class="text-xl uppercase select-none font-bold" href="/">LONGPH.DEV</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a class="btn hover:variant-soft-primary" href="/portfolio" rel="noreferrer"> Portfolio </a>
-				<a class="btn hover:variant-soft-primary" href="/blog" rel="noreferrer"> Blog </a>
-				<a
-					class="btn hover:variant-soft-primary"
-					href="https://github.com/phamduylong"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
+				<div class="hidden md:block">
+					<a class="btn hover:variant-soft-primary" href="/portfolio" rel="noreferrer"> Portfolio </a>
+					<a class="btn hover:variant-soft-primary" href="/blog" rel="noreferrer"> Blog </a>
+					<a
+						class="btn hover:variant-soft-primary"
+						href="https://github.com/phamduylong"
+						target="_blank"
+						rel="noreferrer"
+					>
+						GitHub
+					</a>
+				</div>
+
+				<button class="md:hidden" on:click={() => drawerStore.open(drawerSettings)}>
+					<Menu
+					/>
+				</button>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
