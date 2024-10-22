@@ -82,11 +82,11 @@
 		<div class="flex flex-col items-center justify-center h-full px-4">
 			<a
 				class="btn hover:variant-soft-primary w-full"
-				href="/portfolio"
+				href="/projects"
 				on:click={() => drawerStore.close()}
 				rel="noreferrer"
 			>
-				Portfolio
+				Projects
 			</a>
 			<hr class="w-full my-1" />
 			<a
@@ -117,7 +117,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<a class="text-xl uppercase select-none font-bold" href="/">LONGPH.DEV</a>
+				<a class="text-xl uppercase select-none font-bold" href="/">LONG PHAM</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<div class="hidden md:block">
@@ -131,9 +131,7 @@
 							<span class="hidden md:inline-block">Theme </span>
 						</button>
 					</div>
-					<a class="btn hover:variant-soft-primary" href="/portfolio" rel="noreferrer">
-						Portfolio
-					</a>
+					<a class="btn hover:variant-soft-primary" href="/projects" rel="noreferrer"> Projects </a>
 					<a class="btn hover:variant-soft-primary" href="/blog" rel="noreferrer"> Blog </a>
 					<a
 						class="btn hover:variant-soft-primary"

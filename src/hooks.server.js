@@ -1,5 +1,5 @@
 export const handle = async ({ event, resolve }) => {
-    let theme = '';
+	let theme = '';
 
 	const cookieTheme = event.cookies.get('theme');
 
