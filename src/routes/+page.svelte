@@ -2,7 +2,6 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { section_data } from '$lib/assets/data';
 	import Section from '$lib/components/Section.svelte';
-	import { Linkedin, Github, Mail } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -33,24 +32,5 @@
 		{#each section_data as section}
 			<Section data={section} />
 		{/each}
-
-		<div class="select-none" id="contact">
-			<a
-				class="anchor"
-				href="https://www.linkedin.com/in/duy-long-pham/"
-				target="_blank"
-				rel="external"
-			>
-				<Linkedin class="w-5 h-5 md:w-6 md:h-6 inline-block" />
-			</a>
-
-			<a class="anchor" href="https://github.com/phamduylong/" target="_blank" rel="external"
-				><Github class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
-			>
-
-			<a class="anchor" href="mailto:longphamduy2002@gmail.com" target="_blank" rel="external"
-				><Mail class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
-			>
-		</div>
 	</div>
 </div>
