@@ -29,7 +29,7 @@
 		popup,
 		LightSwitch
 	} from '@skeletonlabs/skeleton';
-	import { Menu, Palette } from 'lucide-svelte';
+	import { Menu, Palette, Github, Linkedin, Mail } from 'lucide-svelte';
 	import { enhance } from '$app/forms';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 	initializeStores();
@@ -191,4 +191,29 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
+	<svelte:fragment slot="pageFooter">
+		<div class="flex flex-wrap justify-center text-center my-5 space-y-1">
+			<div class="select-none" id="contact">
+				<a
+					class="anchor"
+					href="https://www.linkedin.com/in/duy-long-pham/"
+					target="_blank"
+					rel="external"
+				>
+					<Linkedin class="w-5 h-5 md:w-6 md:h-6 inline-block" />
+				</a>
+
+				<a class="anchor" href="https://github.com/phamduylong/" target="_blank" rel="external"
+					><Github class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+				>
+
+				<a class="anchor" href="mailto:longphamduy2002@gmail.com" target="_blank" rel="external"
+					><Mail class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+				>
+			</div>
+			<!-- Flex line break -->
+			<div class="basis-full h-0"></div>
+			<p class="text-sm">&copy; {new Date().getFullYear()} Long Pham. All Rights Reserved.</p>
+		</div>
+	</svelte:fragment>
 </AppShell>
