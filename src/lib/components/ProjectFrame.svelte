@@ -1,10 +1,11 @@
 <script>
-    export let src = '';
+    export let project = '';
     export let alt = '';
 </script>
 
-<div
-	class="card card-hover border-primary-500 lg:hover:border-secondary-500 lg:hover:border-4  border-2 rounded-xl text-center"
+<a
+	class="card card-hover border-primary-500 lg:hover:border-secondary-500 border-2 lg:hover:border-4 active:border-4 active:border-secondary-500  rounded-xl text-center"
+    href="/projects/{project}"
 >
-	<img class="!w-full h-full rounded-xl" src={src} alt={alt} title={alt} />
-</div>
+	<img class="!w-full h-full rounded-xl" src="/{project}.png" alt={alt} title={alt} />
+</a>
