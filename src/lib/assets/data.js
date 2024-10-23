@@ -19,7 +19,7 @@ const section_data = [
 		content: `I like to spend my time on side projects to learn new technologies and to keep my skills sharp. One of the most interesting open source projects I have contributed to is
 				<a class="anchor" href="https://skeleton.dev/" target="_blank" rel="external">SkeletonUI</a>. Skeleton is a fully featured UI Toolkit for building reactive interfaces quickly using 
 				<a class="anchor" href="https://svelte.dev" target="_blank" rel="external">Svelte</a> and <a class="anchor" href="https://tailwindcss.com/" target="_blank" rel="external">TailwindCSS</a>.
-				I have contributed to fixing bugs, as well as enhancing the documentation in various places. My other personal projects can be found <a class="anchor" href="/projects">here</a>.`
+				I have contributed to fixing bugs, as well as enhancing the documentation in various places. Feel free to check out <a class="anchor" href="/projects ">my personal projects page</a>.`
 	}
 ];
 
