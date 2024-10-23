@@ -12,7 +12,7 @@
 		<h1 class="h1 font-serif text-5xl my-8">Long Pham</h1>
 		<div>
 			<Avatar
-				src="setboiz.jpg"
+				src="pp.png"
 				alt="Cover photo"
 				initials="LP"
 				class="float-left mr-4 h-20 md:h-28"
