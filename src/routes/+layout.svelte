@@ -204,12 +204,20 @@
 					<Linkedin class="w-5 h-5 md:w-6 md:h-6 inline-block" />
 				</a>
 
-				<a class="anchor" href="https://github.com/phamduylong/" target="_blank" rel="external" aria-label="Go to my GitHub"
-					><Github class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+				<a
+					class="anchor"
+					href="https://github.com/phamduylong/"
+					target="_blank"
+					rel="external"
+					aria-label="Go to my GitHub"><Github class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
 				>
 
-				<a class="anchor" href="mailto:longphamduy2002@gmail.com" target="_blank" rel="external" aria-label="Send me an email"
-					><Mail class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+				<a
+					class="anchor"
+					href="mailto:longphamduy2002@gmail.com"
+					target="_blank"
+					rel="external"
+					aria-label="Send me an email"><Mail class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
 				>
 			</div>
 			<!-- Flex line break -->

@@ -1,7 +1,7 @@
 <script>
-    import { page } from '$app/stores';
+	import { page } from '$app/stores';
 	import { Loader } from 'lucide-svelte';
-    import { toTitleCase } from '$lib/helper/common';
+	import { toTitleCase } from '$lib/helper/common';
 </script>
 
 <svelte:head>
