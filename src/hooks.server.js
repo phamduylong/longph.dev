@@ -5,9 +5,7 @@ export const handle = async ({ event, resolve }) => {
 
 	event.locals.pb = new PocketBase(DB_URL);
 
-	const authData = await event.locals.pb.admins.authWithPassword(ADMIN_USER, ADMIN_PASSWORD);
-
-	console.log(authData);
+	await event.locals.pb.admins.authWithPassword(ADMIN_USER, ADMIN_PASSWORD);
 
 	event.locals.pb.authStore.loadFromCookie(event.request.headers.get('cookie') ?? '');
 
