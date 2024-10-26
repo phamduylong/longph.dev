@@ -6,7 +6,7 @@
 
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
-	import 'highlight.js/styles/github-dark.css';
+	import 'highlight.js/styles/devibeans.css';
 	import { storeHighlightJs } from '@skeletonlabs/skeleton';
 	import xml from 'highlight.js/lib/languages/xml'; // for HTML
 	import css from 'highlight.js/lib/languages/css';
@@ -18,7 +18,7 @@
 	hljs.registerLanguage('css', css);
 	hljs.registerLanguage('javascript', javascript);
 	hljs.registerLanguage('typescript', typescript);
-	hljs.registerLanguage('vbnet', vbnet);
+	hljs.registerLanguage('vb.net', vbnet);
 	storeHighlightJs.set(hljs);
 
 	// Floating UI for Popups
