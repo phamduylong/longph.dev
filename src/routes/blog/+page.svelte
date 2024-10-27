@@ -1,5 +1,5 @@
 <script>
-	import BlogPostPreviewCard from "$lib/components/BlogPostPreviewCard.svelte";
+	import BlogPostPreviewCard from '$lib/components/BlogPostPreviewCard.svelte';
 
 	/**
 	 * @type {{ posts: [{ id:string,
@@ -22,7 +22,7 @@
 	<div class="container h-full md:w-5/6 xl:w-3/5 grid grid-cols-1 gap-y-5 items-center">
 		<h1 class="h1 font-bold text-center mb-8">Blog</h1>
 		{#each data.posts as post}
-			<BlogPostPreviewCard post={post} />
+			<BlogPostPreviewCard {post} />
 		{/each}
 	</div>
 </div>
