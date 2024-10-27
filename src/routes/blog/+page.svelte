@@ -7,8 +7,8 @@
 	 * 					  content: string,
 	 *                    tags: string[],
 	 * 				  	  snippets: [{ lang: string, code: string }]
-	 *                    created: Date,
-	 *                    updated: Date }] }}
+	 *                    created: string,
+	 *                    updated: string }] }}
 	 */
 	export let data;
 </script>
