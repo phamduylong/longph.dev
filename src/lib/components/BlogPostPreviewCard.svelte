@@ -22,7 +22,7 @@
     }
 </script>
 
-<a class="card card-hover p-4 space-y-2" href='/blog/{post.title.replaceAll(" ", "-")}'>
+<a class="card card-hover p-4 space-y-2" href='/blog/{post.id}'>
     <div class="flex space-x-2">
         <Avatar class="w-8 h-8 inline" src="/pp.png" alt="avatar" />
         <div class="inline">Long Pham</div>
