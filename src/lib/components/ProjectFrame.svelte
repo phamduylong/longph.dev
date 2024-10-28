@@ -15,7 +15,7 @@
 			title={project.alt}
 		/>
 	</a>
-	<div class="flex h-1/4 md:h-1/6 justify-center items-center">
+	<div class="flex h-1/4 md:h-1/6 justify-center items-center space-x-4">
 		<a href={project.demoUrl} rel="external" target="_blank" class="btn btn-sm variant-glass select-none">
 			<Globe size={20} class="inline-block mr-1" />Demo
 		</a>
