@@ -3,44 +3,7 @@
 	/**
 	 * @type { readonly { name: string, alt: string, repoUrl: string, demoUrl: string }[] }
 	 */
-	const projects = Object.freeze([
-		{
-			name: 'alias',
-			alt: 'Alias-like web app',
-			repoUrl: 'https://github.com/phamduylong/AliasWebBased',
-			demoUrl: 'https://alias-web-based.vercel.app/'
-		},
-		{
-			name: 'cart',
-			alt: 'Shopping cart web app',
-			repoUrl: 'https://github.com/phamduylong/ShoppingList',
-			demoUrl: 'https://shopping-list-pi-three.vercel.app/'
-		},
-		{
-			name: 'cv',
-			alt: 'CV web app',
-			repoUrl: 'https://github.com/phamduylong/longph.com/',
-			demoUrl: 'https://longph.vercel.app/'
-		},
-		{
-			name: 'fpvoter',
-			alt: 'Fingerprint voting system',
-			repoUrl: 'https://github.com/phamduylong/fp-voter-frontend',
-			demoUrl: 'https://fp-voter-frontend.vercel.app/'
-		},
-		{
-			name: 'personal',
-			alt: 'Personal website',
-			repoUrl: 'https://github.com/phamduylong/longph.dev',
-			demoUrl: 'https://longph.com'
-		},
-		{
-			name: 'quotes',
-			alt: 'Netflix quotes generator',
-			repoUrl: 'https://github.com/phamduylong/RandomNetflixQuotes',
-			demoUrl: 'random-netflix-quotes.vercel.app'
-		}
-	]);
+	import { projects } from '$lib/assets/data';
 </script>
 
 <svelte:head>

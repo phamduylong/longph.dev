@@ -1,4 +1,4 @@
-const section_data = [
+const section_data = Object.freeze([
 	{
 		title: 'Educations',
 		content: `I enrolled to the IT programme at <a class="anchor" href="https://www.metropolia.fi/en" target="_blank" rel="external">Metropolia UAS</a> in 2020.
@@ -21,6 +21,45 @@ const section_data = [
 				<a class="anchor" href="https://svelte.dev" target="_blank" rel="external">Svelte</a> and <a class="anchor" href="https://tailwindcss.com/" target="_blank" rel="external">TailwindCSS</a>.
 				I have contributed to fixing bugs, as well as enhancing the documentation in various places. Feel free to check out <a class="anchor" href="/projects ">my personal projects page</a>.`
 	}
-];
+]);
 
-export { section_data };
+const projects = Object.freeze([
+	{
+		name: 'alias',
+		alt: 'Alias-like web app',
+		repoUrl: 'https://github.com/phamduylong/AliasWebBased',
+		demoUrl: 'https://alias-web-based.vercel.app/'
+	},
+	{
+		name: 'cart',
+		alt: 'Shopping cart web app',
+		repoUrl: 'https://github.com/phamduylong/ShoppingList',
+		demoUrl: 'https://shopping-list-pi-three.vercel.app/'
+	},
+	{
+		name: 'cv',
+		alt: 'CV web app',
+		repoUrl: 'https://github.com/phamduylong/longph.com/',
+		demoUrl: 'https://longph.vercel.app/'
+	},
+	{
+		name: 'fpvoter',
+		alt: 'Fingerprint voting system',
+		repoUrl: 'https://github.com/phamduylong/fp-voter-frontend',
+		demoUrl: 'https://fp-voter-frontend.vercel.app/'
+	},
+	{
+		name: 'personal',
+		alt: 'Personal website',
+		repoUrl: 'https://github.com/phamduylong/longph.dev',
+		demoUrl: 'https://longph.com'
+	},
+	{
+		name: 'quotes',
+		alt: 'Netflix quotes generator',
+		repoUrl: 'https://github.com/phamduylong/RandomNetflixQuotes',
+		demoUrl: 'random-netflix-quotes.vercel.app'
+	}
+]);
+
+export { section_data, projects };
