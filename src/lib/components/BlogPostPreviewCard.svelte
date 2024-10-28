@@ -33,11 +33,11 @@
 	<h3 class="h3 font-bold p-2 text-justify">{post.title}</h3>
 
     <div class="flex justify-between items-center">
-        <div class="max-w-[75%] md:max-w-[33.33%]">
+        <div class="max-w-[70%] md:max-w-[50%]">
 			{#each post.tags as tag}
                 <span class="chip variant-filled-secondary m-1">#{tag}</span>
 			{/each}
 		</div>
-        <div class="space-x-1 mx-1 md:mx-2"><Pen size={16} class="inline"/><i class="inline">{processDateString(post.updated)}</i></div>
+        <div class="space-x-2 mx-1 md:mx-2 self-end text-sm"><Pen size={16} class="inline"/><i class="inline">{processDateString(post.updated)}</i></div>
 	</div>
 </a>
