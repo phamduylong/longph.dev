@@ -97,7 +97,7 @@
 				on:click={() => drawerStore.close()}
 				rel="noreferrer"
 			>
-				Blog
+				Blogs
 			</a>
 
 			<hr class="w-full my-1" />
@@ -130,11 +130,11 @@
 							class="btn hover:variant-soft-primary"
 							use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
 						>
-							<span class="hidden md:inline-block">Theme </span>
+							<span class="hidden md:inline-block"> Themes </span>
 						</button>
 					</div>
 					<a class="btn hover:variant-soft-primary" href="/projects" rel="noreferrer"> Projects </a>
-					<a class="btn hover:variant-soft-primary" href="/blog" rel="noreferrer"> Blog </a>
+					<a class="btn hover:variant-soft-primary" href="/blog" rel="noreferrer"> Blogs </a>
 					<a
 						class="btn hover:variant-soft-primary"
 						href="https://github.com/phamduylong"

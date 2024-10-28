@@ -22,7 +22,7 @@
     }
 </script>
 
-<a class="card card-hover p-4 space-y-2" href='/blog/{post.id}'>
+<a class="card card-hover p-4 space-y-2 max-h-fit grid-cols-1" href='/blog/{post.id}'>
 
     <!-- Picture and name -->
 	<div class="flex space-x-2">
