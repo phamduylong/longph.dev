@@ -94,7 +94,7 @@
 			<hr class="w-full my-1" />
 			<a
 				class="btn hover:variant-soft-primary w-full"
-				href="/blog"
+				href="/blogs"
 				on:click={() => drawerStore.close()}
 				rel="noreferrer"
 			>
@@ -104,12 +104,11 @@
 			<hr class="w-full my-1" />
 			<a
 				class="btn hover:variant-soft-primary w-full"
-				href="https://github.com/phamduylong"
-				target="_blank"
-				rel="noreferrer"
+				href="/contact"
 				on:click={() => drawerStore.close()}
+				rel="noreferrer"
 			>
-				GitHub
+				Contact
 			</a>
 		</div>
 	{/if}
@@ -124,18 +123,20 @@
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<div class="hidden md:block">
-					<!-- Theme -->
-					<div class="inline-block">
-						<!-- trigger -->
-						<button
-							class="btn hover:variant-soft-primary"
-							use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
-						>
-							<span class="hidden md:inline-block"> Themes </span>
-						</button>
-					</div>
+
 					<a class="btn hover:variant-soft-primary" href="/projects" rel="noreferrer"> Projects </a>
-					<a class="btn hover:variant-soft-primary" href="/blog" rel="noreferrer"> Blogs </a>
+					<a class="btn hover:variant-soft-primary" href="/blogs" rel="noreferrer"> Blogs </a>
+					<a class="btn hover:variant-soft-primary" href="/contact"> Contact </a>
+										<!-- Theme -->
+										<div class="inline-block">
+											<!-- trigger -->
+											<button
+												class="btn hover:variant-soft-primary"
+												use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
+											>
+												<span class="hidden md:inline-block"> Themes </span>
+											</button>
+										</div>
 					<a
 						class="btn hover:variant-soft-primary"
 						href="https://github.com/phamduylong"
@@ -144,13 +145,20 @@
 					>
 						GitHub
 					</a>
+					
 				</div>
 
-				<div class="md:hidden space-x-12 !mr-4">
+				<div class="md:hidden space-x-8 !mr-4">
 					<button
 						class="inline-block"
 						use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
 						title="Theme switch button"><Palette /></button
+					>
+					<a
+						class="inline-block"
+						href="https://github.com/phamduylong"
+						rel="external"
+						target="_blank"><Github /></a
 					>
 					<button
 						class="inline-block"
