@@ -52,6 +52,7 @@
 		{ type: 'wintry', name: 'Wintry', icon: '🌨️' },
 		{ type: 'modern', name: 'Modern', icon: '🤖' },
 		{ type: 'rocket', name: 'Rocket', icon: '🚀' },
+		{ type: 'metal', name: 'Metal', icon: '⚙️' },
 		{ type: 'seafoam', name: 'Seafoam', icon: '🧜‍♀️' },
 		{ type: 'vintage', name: 'Vintage', icon: '📺' },
 		{ type: 'sahara', name: 'Sahara', icon: '🏜️' },
