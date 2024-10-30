@@ -36,7 +36,7 @@
 					rows="4"
 					placeholder="Mary had a little lamb 🐏"
 					required
-				/>
+				></textarea>
 			</label>
 
 			<input type="hidden" name="redirectTo" value={browser ? window.location.origin : ''} />
