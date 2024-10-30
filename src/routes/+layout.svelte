@@ -168,7 +168,7 @@
 				</div>
 
 				<!-- popup -->
-				<div class="fixed card p-4 w-44 md:w-60 shadow-xl z-40" role="dialog" data-popup="theme">
+				<div class="fixed card p-4 w-48 md:w-60 shadow-xl z-40" role="dialog" data-popup="theme">
 					<div class="space-y-4">
 						<section class="flex justify-between items-center">
 							<h6 class="h6">Mode</h6>
