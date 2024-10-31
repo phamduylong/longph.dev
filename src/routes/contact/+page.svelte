@@ -40,7 +40,11 @@
 			</label>
 
 			<input type="hidden" name="redirectTo" value={browser ? window.location.origin : ''} />
-			<input type="submit" class="btn variant-filled w-20 self-center !mt-4 md:!mt-8" value="Send" />
+			<input
+				type="submit"
+				class="btn variant-filled w-20 self-center !mt-4 md:!mt-8"
+				value="Send"
+			/>
 		</form>
 	</div>
 </main>
