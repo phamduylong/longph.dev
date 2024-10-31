@@ -13,12 +13,14 @@
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
 	import vbnet from 'highlight.js/lib/languages/vbnet';
+	import csharp from 'highlight.js/lib/languages/csharp';
 
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
 	hljs.registerLanguage('javascript', javascript);
 	hljs.registerLanguage('typescript', typescript);
 	hljs.registerLanguage('vb.net', vbnet);
+	hljs.registerLanguage('c#', csharp);
 	storeHighlightJs.set(hljs);
 
 	// Floating UI for Popups
@@ -43,7 +45,8 @@
 		width: 'w-full',
 		height: 'h-40',
 		padding: 'p-4',
-		rounded: 'rounded-xl'
+		rounded: 'rounded-xl',
+		bgDrawer: 'variant-glass-surface'
 	};
 
 	// Theme Settings
@@ -123,20 +126,19 @@
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<div class="hidden md:block">
-
 					<a class="btn hover:variant-soft-primary" href="/projects" rel="noreferrer"> Projects </a>
 					<a class="btn hover:variant-soft-primary" href="/blogs" rel="noreferrer"> Blogs </a>
 					<a class="btn hover:variant-soft-primary" href="/contact"> Contact </a>
-										<!-- Theme -->
-										<div class="inline-block">
-											<!-- trigger -->
-											<button
-												class="btn hover:variant-soft-primary"
-												use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
-											>
-												<span class="hidden md:inline-block"> Themes </span>
-											</button>
-										</div>
+					<!-- Theme -->
+					<div class="inline-block">
+						<!-- trigger -->
+						<button
+							class="btn hover:variant-soft-primary"
+							use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
+						>
+							<span class="hidden md:inline-block"> Themes </span>
+						</button>
+					</div>
 					<a
 						class="btn hover:variant-soft-primary"
 						href="https://github.com/phamduylong"
@@ -145,7 +147,6 @@
 					>
 						GitHub
 					</a>
-					
 				</div>
 
 				<div class="md:hidden space-x-8 !mr-4">

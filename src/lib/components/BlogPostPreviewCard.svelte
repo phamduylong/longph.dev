@@ -6,7 +6,8 @@
 	 * 					  title: string,
 	 * 					  content: string,
 	 *                    tags: string[],
-	 * 				  	  snippets: [{ lang: string, code: string }]
+	 * 				  	  snippets: [{ lang: string, code: string }],
+	 * 				      toc: boolean,
 	 *                    created: string,
 	 *                    updated: string }}
 	 */
