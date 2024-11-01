@@ -34,7 +34,7 @@
 
 	<div
 		class="container mx-auto h-full flex flex-wrap items-center space-y-5 md:space-y-10 justify-center md:w-4/5 xl:w-3/5 p-5"
-		use:tocCrawler={{ mode: 'generate' }}
+		use:tocCrawler={{ mode: 'generate', scrollTarget: '#page' }}
 	>
 		<h2 class="h2 font-bold text-center">{data.post.title}</h2>
 		<article class="text-justify text-pretty">

@@ -117,7 +117,8 @@
 	{/if}
 </Drawer>
 <!-- App Shell -->
-<AppShell>
+ <!-- TODO: AppShell deprecated. Migrate it to custom layout-->
+<AppShell regionPage="scroll-smooth">
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
 		<AppBar>
