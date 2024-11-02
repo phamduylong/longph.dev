@@ -17,7 +17,7 @@
 </script>
 
 {#if data.post.toc}
-	<TableOfContents class="hidden xl:block fixed top-1/3 w-64 mx-5 p-5" />
+	<TableOfContents class="hidden xl:block fixed top-1/4 w-64 p-2 mx-4 h-1/2 overflow-scroll" />
 {/if}
 <main>
 	<div class="my-10 flex flex-wrap justify-center">
