@@ -150,7 +150,7 @@
 					</a>
 				</div>
 
-				<div class="md:hidden space-x-8 !mr-4">
+				<div class="md:hidden space-x-8">
 					<button
 						class="inline-block"
 						use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
