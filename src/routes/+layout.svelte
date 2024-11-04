@@ -14,6 +14,7 @@
 	import typescript from 'highlight.js/lib/languages/typescript';
 	import vbnet from 'highlight.js/lib/languages/vbnet';
 	import csharp from 'highlight.js/lib/languages/csharp';
+	import cpp from 'highlight.js/lib/languages/cpp';
 
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
@@ -21,6 +22,7 @@
 	hljs.registerLanguage('typescript', typescript);
 	hljs.registerLanguage('vb.net', vbnet);
 	hljs.registerLanguage('c#', csharp);
+	hljs.registerLanguage('C++', cpp);
 	storeHighlightJs.set(hljs);
 
 	// Floating UI for Popups
