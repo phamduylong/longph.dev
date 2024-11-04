@@ -1,5 +1,6 @@
 import { join } from 'path';
 import { metal } from './src/lib/themes/metal';
+import { thunder } from './src/lib/themes/thunder';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import { skeleton } from '@skeletonlabs/tw-plugin';
@@ -64,7 +65,7 @@ export default {
 						enhancements: true
 					}
 				],
-				custom: [metal]
+				custom: [metal, thunder]
 			}
 		})
 	]

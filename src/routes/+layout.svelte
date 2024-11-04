@@ -56,6 +56,7 @@
 		{ type: 'modern', name: 'Modern', icon: '🤖' },
 		{ type: 'rocket', name: 'Rocket', icon: '🚀' },
 		{ type: 'metal', name: 'Metal', icon: '⚙️' },
+		{ type: 'thunder', name: 'Thunder', icon: '⚡' },
 		{ type: 'seafoam', name: 'Seafoam', icon: '🧜‍♀️' },
 		{ type: 'vintage', name: 'Vintage', icon: '📺' },
 		{ type: 'sahara', name: 'Sahara', icon: '🏜️' },
@@ -117,7 +118,7 @@
 	{/if}
 </Drawer>
 <!-- App Shell -->
- <!-- TODO: AppShell deprecated. Migrate it to custom layout-->
+<!-- TODO: AppShell deprecated. Migrate it to custom layout-->
 <AppShell regionPage="scroll-smooth">
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
@@ -150,7 +151,7 @@
 					</a>
 				</div>
 
-				<div class="md:hidden space-x-8 !mr-4">
+				<div class="md:hidden space-x-8">
 					<button
 						class="inline-block"
 						use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
