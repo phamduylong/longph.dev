@@ -45,7 +45,7 @@
 	const menuDrawerSettings = {
 		id: 'menu-drawer',
 		width: 'w-full',
-		height: 'h-40',
+		height: 'h-52',
 		padding: 'p-4',
 		rounded: 'rounded-xl',
 		bgDrawer: 'variant-glass-surface'
