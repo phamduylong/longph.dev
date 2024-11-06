@@ -23,23 +23,23 @@
 	}
 </script>
 
-<a class="card card-hover p-4 space-y-2 max-h-fit grid-cols-1" href="/blogs/{post.id}">
+<div class="card p-4 space-y-2 max-h-fit grid-cols-1">
 	<!-- Picture and name -->
-	<div class="flex space-x-2">
+	<a class="flex space-x-2" href="/" rel="author">
 		<Avatar class="w-8 h-8 inline" src="/pp.png" alt="avatar" />
 		<div class="inline">Long Pham</div>
-	</div>
+	</a>
 
-	<h3 class="h3 font-bold p-2 text-justify">{post.title}</h3>
+	<a href="/blogs/{post.id}"><h3 class="h3 font-bold p-2 text-justify hover:text-primary-600">{post.title}</h3></a>
 
 	<div class="flex justify-between items-center">
 		<div class="max-w-[70%] md:max-w-[50%]">
 			{#each post.tags as tag}
-				<span class="chip variant-filled-secondary m-1">#{tag}</span>
+				<span class="chip variant-filled-secondary m-1"><span class="!text-primary-600 mr-px">#</span>{tag}</span>
 			{/each}
 		</div>
-		<div class="space-x-2 mx-1 md:mx-2 self-end text-sm">
+		<div class="space-x-2 mx-1 md:mx-2 self-end text-sm" title="Last edited on {new Date(post.updated).toTimeString()}">
 			<Pen size={16} class="inline" /><i class="inline">{processDateString(post.updated)}</i>
 		</div>
 	</div>
-</a>
+</div>
