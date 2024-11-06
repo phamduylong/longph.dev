@@ -1,38 +1,21 @@
-# create-svelte
+# Long Pham's Personal Website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is my personal project, built during my free time. 
 
-## Creating a project
+## Technologies
 
-If you're seeing this, you've probably already done this step. Congrats!
+The site is built with [Svelte](https://svelte.dev/docs/svelte/overview) and [SvelteKit](https://svelte.dev/docs/kit/introduction) as its meta framework. I have always enjoyed Svelte (at least v4 and lower, idk about v5 yet). I used [Tailwind](https://tailwindcss.com/) along with [Skeleton](https://skeleton.dev) to assist me in building a clean, simple and accessible UI. I used [PocketBase](https://pocketbase.io/)'s database services to store persisted data as I find it super enjoyable to work with.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Features
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Projects
 
-## Developing
+I have a page to display all my projects. I suppose you can call it a portfolio but it's just a page full of projects boxes
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### CV
 
-```bash
-npm run dev
+I have my CV as a static file available [here](https://longph.com/resume.pdf). Can be seen on the page as well.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Blog
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+I don't have the habit of writing anything but it feels fun to publish random thoughts to the world sometimes. I have a frequently updated threads dedicated for LeetCode solutions as well. The thread can be found [here](https://longph.com/blogs/h9evcysg5kckd8c).
