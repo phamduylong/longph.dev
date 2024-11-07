@@ -1,6 +1,5 @@
-<script lang="ts">
-	export let data;
-	export let classes = '';
+<script>
+	let { data, classes = '' } = $props();
 	function removeWhitespaces(str: string): string {
 		return str.replace(/\s+/g, '').toLowerCase();
 	}

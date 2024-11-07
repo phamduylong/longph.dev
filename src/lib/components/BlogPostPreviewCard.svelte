@@ -1,17 +1,14 @@
 <script>
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { Pen } from 'lucide-svelte';
+	
 	/**
-	 * @type {{ id:string,
-	 * 					  title: string,
-	 * 					  content: string,
-	 *                    tags: string[],
-	 * 				  	  snippets: [{ lang: string, code: string }],
-	 * 				      toc: boolean,
-	 *                    created: string,
-	 *                    updated: string }}
+	 * @typedef {Object} Props
+	 * @property {any} post
 	 */
-	export let post;
+
+	/** @type {Props} */
+	let { post } = $props();
 	/**
 	 * Process date string to human readable format
 	 * Shows day, month and year if the year is not the current year
