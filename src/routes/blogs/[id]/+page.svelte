@@ -2,18 +2,15 @@
 	import { CodeBlock, Avatar } from '@skeletonlabs/skeleton';
 	import { CODE_MARKER } from '$lib/helper/constants';
 	import { TableOfContents, tocCrawler } from '@skeletonlabs/skeleton';
+	
 	/**
-	 * @type {{post: { 	  id:string,
-	 * 					  title: string,
-	 * 					  content: string,
-	 *                    tags: string[],
-	 * 				  	  snippets: [{ lang: string, code: string }],
-	 * 				      toc: boolean,
-	 *                    created: Date,
-	 *                    updated: Date }}}
+	 * @typedef {Object} Props
+	 * @property {any} data
 	 */
-	export let data;
-	$: updatedDate = new Date(data.post.updated);
+
+	/** @type {Props} */
+	let { data } = $props();
+	let updatedDate = $derived(new Date(data.post.updated));
 </script>
 
 {#if data.post.toc}
