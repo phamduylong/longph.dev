@@ -1,13 +1,9 @@
 <script>
-	
-	import { Globe, Github } from 'lucide-svelte';
 	/**
-	 * @typedef {Object} Props
-	 * @property { { name: string, alt: string, repoUrl: string, demoUrl: string } } project
+	 * @type { { name: string, alt: string, repoUrl: string, demoUrl: string } }
 	 */
-
-	/** @type {Props} */
-	let { project } = $props();
+	export let project;
+	import { Globe, Github } from 'lucide-svelte';
 	const fetchImage = async () => {
 		const res = await fetch(`/${project.name}.png`);
 		const data = await res.blob();

@@ -1,14 +1,17 @@
 <script>
 	import BlogPostPreviewCard from '$lib/components/BlogPostPreviewCard.svelte';
 
-	
 	/**
-	 * @typedef {Object} Props
-	 * @property {any} data
+	 * @type {{ posts: [{ id:string,
+	 * 					  title: string,
+	 * 					  content: string,
+	 *                    tags: string[],
+	 * 				  	  snippets: [{ lang: string, code: string }],
+	 * 				      toc: boolean,
+	 *                    created: string,
+	 *                    updated: string }] }}
 	 */
-
-	/** @type {Props} */
-	let { data } = $props();
+	export let data;
 </script>
 
 <svelte:head>
