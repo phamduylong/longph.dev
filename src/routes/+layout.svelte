@@ -37,13 +37,6 @@
 	} from '@skeletonlabs/skeleton';
 	import { Menu, Palette, Github, Linkedin, Mail } from 'lucide-svelte';
 	import { enhance } from '$app/forms';
-	/**
-	 * @typedef {Object} Props
-	 * @property {import('svelte').Snippet} [children]
-	 */
-
-	/** @type {Props} */
-	let { children } = $props();
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 	initializeStores();
 	const drawerStore = getDrawerStore();
@@ -99,7 +92,7 @@
 			<a
 				class="btn hover:variant-soft-primary w-full"
 				href="/projects"
-				onclick={() => drawerStore.close()}
+				on:click={() => drawerStore.close()}
 				rel="noreferrer"
 			>
 				Projects
@@ -108,7 +101,7 @@
 			<a
 				class="btn hover:variant-soft-primary w-full"
 				href="/resume.pdf"
-				onclick={() => drawerStore.close()}
+				on:click={() => drawerStore.close()}
 				rel="noreferrer"
 			>
 				CV
@@ -117,7 +110,7 @@
 			<a
 				class="btn hover:variant-soft-primary w-full"
 				href="/blogs"
-				onclick={() => drawerStore.close()}
+				on:click={() => drawerStore.close()}
 				rel="noreferrer"
 			>
 				Blogs
@@ -127,7 +120,7 @@
 			<a
 				class="btn hover:variant-soft-primary w-full"
 				href="/contact"
-				onclick={() => drawerStore.close()}
+				on:click={() => drawerStore.close()}
 				rel="noreferrer"
 			>
 				Contact
@@ -138,132 +131,124 @@
 <!-- App Shell -->
 <!-- TODO: AppShell deprecated. Migrate it to custom layout-->
 <AppShell regionPage="scroll-smooth">
-	{#snippet header()}
-	
-			<!-- App Bar -->
-			<AppBar>
-				{#snippet lead()}
-					
-						<a class="text-xl uppercase select-none font-bold" href="/">LONG PHAM</a>
-					
-					{/snippet}
-				{#snippet trail()}
-					
-						<div class="hidden md:block">
-							<a class="btn hover:variant-soft-primary" href="/projects" rel="me"> Projects </a>
-							<a class="btn hover:variant-soft-primary" href="/resume.pdf" rel="author" download="resume.pdf"> CV </a>
-							<a class="btn hover:variant-soft-primary" href="/blogs" rel="me"> Blogs </a>
-							<a class="btn hover:variant-soft-primary" href="/contact" rel="me"> Contact </a>
-							<!-- Theme -->
-							<div class="inline-block">
-								<!-- trigger -->
-								<button
-									class="btn hover:variant-soft-primary"
-									use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
-								>
-									<span class="hidden md:inline-block"> Themes </span>
-								</button>
-							</div>
-							<a
-								class="btn hover:variant-soft-primary"
-								href="https://github.com/phamduylong"
-								target="_blank"
-								rel="noreferrer"
-							>
-								GitHub
-							</a>
-						</div>
-
-						<div class="md:hidden space-x-8">
-							<button
-								class="inline-block"
-								use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
-								title="Theme switch button"><Palette /></button
-							>
-							<a
-								class="inline-block"
-								href="https://github.com/phamduylong"
-								rel="external"
-								target="_blank"><Github /></a
-							>
-							<button
-								class="inline-block"
-								title="Menu open button"
-								onclick={() => drawerStore.open(menuDrawerSettings)}><Menu /></button
-							>
-						</div>
-
-						<!-- popup -->
-						<div class="fixed card p-4 w-48 md:w-60 shadow-xl z-40" role="dialog" data-popup="theme">
-							<div class="space-y-4">
-								<section class="flex justify-between items-center">
-									<h6 class="h6">Mode</h6>
-									<LightSwitch />
-								</section>
-								<hr />
-								<nav class="list-nav p-4 -m-4 max-h-64 lg:max-h-[500px] overflow-y-auto">
-									<form action="/?/setTheme" method="POST" use:enhance={setTheme}>
-										<ul>
-											{#each themes as { icon, name, type }}
-												<li>
-													<button
-														class="option w-full h-full"
-														type="submit"
-														name="theme"
-														value={type}
-														class:bg-primary-active-token={$storeTheme === type}
-													>
-														<span>{icon}</span>
-														<span class="flex-auto text-left">{name}</span>
-													</button>
-												</li>
-											{/each}
-										</ul>
-									</form>
-								</nav>
-							</div>
-						</div>
-					
-					{/snippet}
-			</AppBar>
-		
-	{/snippet}
-	<!-- Page Route Content -->
-	{@render children?.()}
-	{#snippet pageFooter()}
-	
-			<div class="flex flex-wrap justify-center text-center my-5 space-y-1">
-				<div class="select-none" id="contact">
+	<svelte:fragment slot="header">
+		<!-- App Bar -->
+		<AppBar>
+			<svelte:fragment slot="lead">
+				<a class="text-xl uppercase select-none font-bold" href="/">LONG PHAM</a>
+			</svelte:fragment>
+			<svelte:fragment slot="trail">
+				<div class="hidden md:block">
+					<a class="btn hover:variant-soft-primary" href="/projects" rel="me"> Projects </a>
+					<a class="btn hover:variant-soft-primary" href="/resume.pdf" rel="author" download="resume.pdf"> CV </a>
+					<a class="btn hover:variant-soft-primary" href="/blogs" rel="me"> Blogs </a>
+					<a class="btn hover:variant-soft-primary" href="/contact" rel="me"> Contact </a>
+					<!-- Theme -->
+					<div class="inline-block">
+						<!-- trigger -->
+						<button
+							class="btn hover:variant-soft-primary"
+							use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
+						>
+							<span class="hidden md:inline-block"> Themes </span>
+						</button>
+					</div>
 					<a
-						class="anchor"
-						href="https://www.linkedin.com/in/duy-long-pham/"
+						class="btn hover:variant-soft-primary"
+						href="https://github.com/phamduylong"
 						target="_blank"
-						rel="external"
-						aria-label="Go to my LinkedIn"
+						rel="noreferrer"
 					>
-						<Linkedin class="w-5 h-5 md:w-6 md:h-6 inline-block" />
+						GitHub
 					</a>
+				</div>
 
-					<a
-						class="anchor"
-						href="https://github.com/phamduylong/"
-						target="_blank"
-						rel="external"
-						aria-label="Go to my GitHub"><Github class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+				<div class="md:hidden space-x-8">
+					<button
+						class="inline-block"
+						use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
+						title="Theme switch button"><Palette /></button
 					>
-
 					<a
-						class="anchor"
-						href="mailto:longphamduy2002@gmail.com"
-						target="_blank"
+						class="inline-block"
+						href="https://github.com/phamduylong"
 						rel="external"
-						aria-label="Send me an email"><Mail class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+						target="_blank"><Github /></a
+					>
+					<button
+						class="inline-block"
+						title="Menu open button"
+						on:click={() => drawerStore.open(menuDrawerSettings)}><Menu /></button
 					>
 				</div>
-				<!-- Flex line break -->
-				<div class="basis-full h-0"></div>
-				<p class="text-sm">&copy; {new Date().getFullYear()} Long Pham. All Rights Reserved.</p>
+
+				<!-- popup -->
+				<div class="fixed card p-4 w-48 md:w-60 shadow-xl z-40" role="dialog" data-popup="theme">
+					<div class="space-y-4">
+						<section class="flex justify-between items-center">
+							<h6 class="h6">Mode</h6>
+							<LightSwitch />
+						</section>
+						<hr />
+						<nav class="list-nav p-4 -m-4 max-h-64 lg:max-h-[500px] overflow-y-auto">
+							<form action="/?/setTheme" method="POST" use:enhance={setTheme}>
+								<ul>
+									{#each themes as { icon, name, type }}
+										<li>
+											<button
+												class="option w-full h-full"
+												type="submit"
+												name="theme"
+												value={type}
+												class:bg-primary-active-token={$storeTheme === type}
+											>
+												<span>{icon}</span>
+												<span class="flex-auto text-left">{name}</span>
+											</button>
+										</li>
+									{/each}
+								</ul>
+							</form>
+						</nav>
+					</div>
+				</div>
+			</svelte:fragment>
+		</AppBar>
+	</svelte:fragment>
+	<!-- Page Route Content -->
+	<slot />
+	<svelte:fragment slot="pageFooter">
+		<div class="flex flex-wrap justify-center text-center my-5 space-y-1">
+			<div class="select-none" id="contact">
+				<a
+					class="anchor"
+					href="https://www.linkedin.com/in/duy-long-pham/"
+					target="_blank"
+					rel="external"
+					aria-label="Go to my LinkedIn"
+				>
+					<Linkedin class="w-5 h-5 md:w-6 md:h-6 inline-block" />
+				</a>
+
+				<a
+					class="anchor"
+					href="https://github.com/phamduylong/"
+					target="_blank"
+					rel="external"
+					aria-label="Go to my GitHub"><Github class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+				>
+
+				<a
+					class="anchor"
+					href="mailto:longphamduy2002@gmail.com"
+					target="_blank"
+					rel="external"
+					aria-label="Send me an email"><Mail class="w-5 h-5 md:w-6 md:h-6 inline-block" /></a
+				>
 			</div>
-		
-	{/snippet}
+			<!-- Flex line break -->
+			<div class="basis-full h-0"></div>
+			<p class="text-sm">&copy; {new Date().getFullYear()} Long Pham. All Rights Reserved.</p>
+		</div>
+	</svelte:fragment>
 </AppShell>

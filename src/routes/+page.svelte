@@ -30,7 +30,7 @@
 			</p>
 		</div>
 		{#each section_data as section}
-			<Section data={section} classes="" />
+			<Section data={section} />
 		{/each}
 	</div>
 </div>
