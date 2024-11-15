@@ -1,6 +1,6 @@
 # Long Pham's Personal Website
 
-This is my personal project, built during my free time. 
+This is my personal project, built during my free time.
 
 ## Technologies
 
