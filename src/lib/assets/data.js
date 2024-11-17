@@ -58,7 +58,7 @@ const projects = Object.freeze([
 		name: 'quotes',
 		alt: 'Netflix quotes generator',
 		repoUrl: 'https://github.com/phamduylong/RandomNetflixQuotes',
-		demoUrl: 'random-netflix-quotes.vercel.app'
+		demoUrl: 'https://random-netflix-quotes.vercel.app'
 	}
 ]);
 

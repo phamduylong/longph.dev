@@ -1,23 +1,12 @@
-<script>
-	/**
-	 * @typedef {Object} Props
-	 * @property {{ title: string, content: string}} data
-	 * @property {string?} classes
-	 */
-
-	/** @type {Props} */
-	let { data, classes = '' } = $props();
-
-	/**
-	 * Remove whitespaces from a string
-	 * @param str {string}
-	 */
-	function removeWhitespaces(str) {
+<script lang="ts">
+	export let data;
+	export let classes = '';
+	function removeWhitespaces(str: string): string {
 		return str.replace(/\s+/g, '').toLowerCase();
 	}
 </script>
 
-<div class={classes ? classes : ""}>
+<div class={classes}>
 	<h3 class="h3 anchor font-bold" id={removeWhitespaces(data.title)}>
 		<a href={'#' + removeWhitespaces(data.title)}>{data.title}</a>
 	</h3>
