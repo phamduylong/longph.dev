@@ -1,6 +1,7 @@
 <script>
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { Pen } from 'lucide-svelte';
+	import { browser } from '$app/environment';
 	/**
 	 * @type {{ id:string,
 	 * 					  title: string,
@@ -35,7 +36,7 @@
 	<div class="flex justify-between items-center">
 		<div class="max-w-[70%] md:max-w-[50%]">
 			{#each post.tags as tag}
-				<span class="chip variant-filled-secondary m-1"><span class="!text-primary-600 mr-px">#</span>{tag}</span>
+				<a data-sveltekit-preload-data class="chip variant-filled-secondary m-1" href="{(browser) ? window.location.origin : ""}/blogs?tag={tag}"><span class="!text-primary-600 mr-px">#</span>{tag}</a>
 			{/each}
 		</div>
 		<div class="space-x-2 mx-1 md:mx-2 self-end text-sm" title="Last edited on {new Date(post.updated).toTimeString()}">
