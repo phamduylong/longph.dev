@@ -26,12 +26,12 @@
 
 <div class="card p-4 space-y-2 max-h-fit grid-cols-1">
 	<!-- Picture and name -->
-	<a class="flex space-x-2" href="/" rel="author">
+	<a class="flex space-x-2 w-fit" href="/" rel="author">
 		<Avatar class="w-8 h-8 inline" src="/pp.png" alt="avatar" />
 		<div class="inline">Long Pham</div>
 	</a>
 
-	<a href="/blog/{post.id}"><h3 class="h3 font-bold p-2 text-justify hover:text-primary-600">{post.title}</h3></a>
+	<a href="/blog/{post.id}"><h3 class="h3 font-bold p-2 hover:text-primary-600">{post.title}</h3></a>
 
 	<div class="flex justify-between items-center">
 		<div class="max-w-[70%] md:max-w-[50%]">
