@@ -37,7 +37,7 @@
 		use:tocCrawler={{ mode: 'generate', scrollTarget: '#page' }}
 	>
 		<h2 class="h2 font-bold text-center">{data.post.title}</h2>
-		<article class="text-justify text-pretty">
+		<article class="text-pretty">
 			<!-- Split content by CODE_MARKER and render the content without the marker -->
 			<!-- If there is a snippet, render the code block -->
 			{#each data.post.content.split(CODE_MARKER) as part, i (i)}

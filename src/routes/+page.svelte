@@ -8,7 +8,7 @@
 	<title>Long Pham</title>
 </svelte:head>
 <div class="container h-full mx-auto flex justify-center items-center p-10">
-	<div class="space-y-8 md:space-y-12 flex flex-col items-center text-justify md:w-4/5 lg:w-3/5">
+	<div class="space-y-8 md:space-y-12 flex flex-col items-center text-start md:w-4/5 lg:w-3/5">
 		<h1 class="h1 font-serif text-5xl my-8">Long Pham</h1>
 		<div>
 			<Avatar
