@@ -116,11 +116,11 @@
 			<hr class="w-full my-1" />
 			<a
 				class="btn hover:variant-soft-primary w-full"
-				href="/blogs"
+				href="/blog"
 				onclick={() => drawerStore.close()}
 				rel="noreferrer"
 			>
-				Blogs
+				Blog
 			</a>
 
 			<hr class="w-full my-1" />
@@ -152,7 +152,7 @@
 						<div class="hidden md:block">
 							<a class="btn hover:variant-soft-primary" href="/projects" rel="me"> Projects </a>
 							<a class="btn hover:variant-soft-primary" href="/resume.pdf" rel="author" download="resume.pdf"> CV </a>
-							<a class="btn hover:variant-soft-primary" href="/blogs" rel="me"> Blogs </a>
+							<a class="btn hover:variant-soft-primary" href="/blog" rel="me"> Blog </a>
 							<a class="btn hover:variant-soft-primary" href="/contact" rel="me"> Contact </a>
 							<!-- Theme -->
 							<div class="inline-block">

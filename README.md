@@ -18,4 +18,4 @@ I have my CV as a static file available [here](https://longph.com/resume.pdf). C
 
 ### Blog
 
-I don't have the habit of writing anything but it feels fun to publish random thoughts to the world sometimes. I have a frequently updated threads dedicated for LeetCode solutions as well. The thread can be found [here](https://longph.com/blogs/h9evcysg5kckd8c).
+I don't have the habit of writing anything but it feels fun to publish random thoughts to the world sometimes. I have a frequently updated threads dedicated for LeetCode solutions as well. The thread can be found [here](https://longph.com/blog/h9evcysg5kckd8c).
