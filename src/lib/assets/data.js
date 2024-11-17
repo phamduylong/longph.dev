@@ -31,28 +31,16 @@ const projects = Object.freeze([
 		demoUrl: 'https://alias-web-based.vercel.app/'
 	},
 	{
-		name: 'cart',
-		alt: 'Shopping cart web app',
-		repoUrl: 'https://github.com/phamduylong/ShoppingList',
-		demoUrl: 'https://shopping-list-pi-three.vercel.app/'
-	},
-	{
-		name: 'cv',
-		alt: 'CV web app',
-		repoUrl: 'https://github.com/phamduylong/longph.com/',
-		demoUrl: 'https://longph.vercel.app/'
-	},
-	{
 		name: 'fpvoter',
 		alt: 'Fingerprint voting system',
 		repoUrl: 'https://github.com/phamduylong/fp-voter-frontend',
 		demoUrl: 'https://fp-voter-frontend.vercel.app/'
 	},
 	{
-		name: 'personal',
-		alt: 'Personal website',
-		repoUrl: 'https://github.com/phamduylong/longph.dev',
-		demoUrl: 'https://longph.com'
+		name: 'cli',
+		alt: 'CLI website',
+		repoUrl: 'https://github.com/phamduylong/cli',
+		demoUrl: 'https://cli.longph.com/'
 	},
 	{
 		name: 'quotes',
