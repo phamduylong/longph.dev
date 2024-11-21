@@ -31,15 +31,24 @@
 		<div class="inline">Long Pham</div>
 	</a>
 
-	<a href="/blog/{post.id}"><h3 class="h3 font-bold p-2 hover:text-primary-600">{post.title}</h3></a>
+	<a href="/blog/{post.id}"><h3 class="h3 font-bold p-2 hover:text-primary-600">{post.title}</h3></a
+	>
 
 	<div class="flex justify-between items-center">
 		<div class="max-w-[70%] md:max-w-[50%]">
 			{#each post.tags as tag}
-				<a data-sveltekit-preload-data class="chip variant-filled-secondary m-1" href="{(browser) ? window.location.origin : ""}/blog?tag={tag}"><span class="!text-primary-600 mr-px">#</span>{tag}</a>
+				<a
+					data-sveltekit-preload-data
+					class="chip variant-filled-secondary m-1"
+					href="{browser ? window.location.origin : ''}/blog?tag={tag}"
+					><span class="!text-primary-600 mr-px">#</span>{tag}</a
+				>
 			{/each}
 		</div>
-		<div class="space-x-2 mx-1 md:mx-2 self-end text-sm" title="Last edited on {new Date(post.updated).toTimeString()}">
+		<div
+			class="space-x-2 mx-1 md:mx-2 self-end text-sm"
+			title="Last edited on {new Date(post.updated).toTimeString()}"
+		>
 			<Pen size={16} class="inline" /><i class="inline">{processDateString(post.updated)}</i>
 		</div>
 	</div>
