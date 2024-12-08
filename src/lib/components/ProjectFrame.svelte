@@ -12,20 +12,23 @@
 			return 'https://http.cat/status/404.jpg';
 		}
 	};
+	const baseClasses = `container h-3/4 md:h-5/6 rounded-xl 
+	border-primary-500 lg:hover:border-secondary-500 border-2 
+	lg:hover:border-4 active:border-4 active:border-secondary-500`;
 </script>
 
 <div class="card rounded-xl text-center variant-ghost-surface">
 	<a href={project.demoUrl} rel="external" target="_blank">
 		{#await fetchImage()}
 			<img
-				class="container h-3/4 md:h-5/6 rounded-xl border-primary-500 lg:hover:border-secondary-500 border-2 lg:hover:border-4 active:border-4 active:border-secondary-500"
+				class="{baseClasses}"
 				src="https://http.cat/images/102.jpg"
 				alt={project.alt}
 				title={project.alt}
 			/>
 		{:then imgSrc}
 			<img
-				class="container h-3/4 md:h-5/6 rounded-xl border-primary-500 lg:hover:border-secondary-500 border-2 lg:hover:border-4 active:border-4 active:border-secondary-500"
+				class="{baseClasses}"
 				src={imgSrc}
 				alt={project.alt}
 				title={project.alt}
