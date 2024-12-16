@@ -32,6 +32,7 @@
 	 */
 	function onFlavorSelection(event) {
 		chosenTags = [...chosenTags, event.detail.label];
+		// Find a way to persist the chosen tags
 		window.location.href = `/blog?tag=${chosenTags.join('&tag=')}`;
 	}
 </script>
