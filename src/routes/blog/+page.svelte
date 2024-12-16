@@ -1,40 +1,42 @@
 <script>
+	import {  } from '$app/environment';
 	import BlogPostPreviewCard from '$lib/components/BlogPostPreviewCard.svelte';
 	import { InputChip, Autocomplete } from '@skeletonlabs/skeleton';
 	/**
-	 * @type {{ posts: [{ id:string,
+	 * @type {{ posts: { id:string,
 	 * 					  title: string,
 	 * 					  content: string,
 	 *                    tags: string[],
 	 * 				  	  snippets: [{ lang: string, code: string }],
 	 * 				      toc: boolean,
 	 *                    created: string,
-	 *                    updated: string }] }}
+	 *                    updated: string }[] }}
 	 */
 	export let data;
 	let inputChip = '';
 	/**
 	 * @type {{ value: string, label: string }[]}
 	 */
-	$: options = data.posts.reduce((acc, post) => {
-		const tags = post.tags.map(tag => ({ value: tag, label: tag }));
-		console.table([...acc, ...tags]);
-		return [...acc, ...tags];
-	}, []);
+	$: options = [...new Set(data.posts.map(item => item.tags).flat())].map(value => ({ label: value, value: value }));;
 	/**
 	 * @type {string[]}
 	 */
 	let chosenTags = [];
-
 	/**
 	 * 
 	 * @param event {{ detail: { value: string, label: string } }}
 	 */
 	function onFlavorSelection(event) {
-		chosenTags = [...chosenTags, event.detail.label];
-		// Find a way to persist the chosen tags
-		window.location.href = `/blog?tag=${chosenTags.join('&tag=')}`;
+		chosenTags = [...chosenTags, event.detail.value];
 	}
+
+	$: posts = data.posts.filter(post => {
+		if (chosenTags.length === 0) {
+			return true;
+		}
+		return chosenTags.every(tag => post.tags.includes(tag));
+
+	});
 </script>
 
 <svelte:head>
@@ -58,7 +60,7 @@
 				/>
 			</div>
 		</div>
-		{#each data.posts as post}
+		{#each posts as post}
 			<BlogPostPreviewCard {post} />
 		{/each}
 	</div>
