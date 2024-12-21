@@ -1,7 +1,11 @@
-<script lang="ts">
+<script>
 	export let data;
 	export let classes = '';
-	function removeWhitespaces(str: string): string {
+	/**
+	 * Remove whitespaces from a string
+	 * @param str {string}
+	 */
+	function removeWhitespaces(str) {
 		return str.replace(/\s+/g, '').toLowerCase();
 	}
 </script>
