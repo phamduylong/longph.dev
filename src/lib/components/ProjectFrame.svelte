@@ -21,18 +21,13 @@
 	<a href={project.demoUrl} rel="external" target="_blank">
 		{#await fetchImage()}
 			<img
-				class="{baseClasses}"
+				class={baseClasses}
 				src="https://http.cat/images/102.jpg"
 				alt={project.alt}
 				title={project.alt}
 			/>
 		{:then imgSrc}
-			<img
-				class="{baseClasses}"
-				src={imgSrc}
-				alt={project.alt}
-				title={project.alt}
-			/>
+			<img class={baseClasses} src={imgSrc} alt={project.alt} title={project.alt} />
 		{/await}
 	</a>
 	<div class="flex h-1/4 md:h-1/6 justify-center items-center space-x-4">
