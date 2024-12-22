@@ -49,7 +49,7 @@
 			class="space-x-2 mx-1 md:mx-2 self-end text-sm"
 			title="Last edited on {new Date(post.updated).toTimeString()}"
 		>
-			<Pen size={16} class="inline" /><i class="inline">{processDateString(post.updated)}</i>
+			<Pen size={16} class="inline" /><i class="inline cursor-default">{processDateString(post.updated)}</i>
 		</div>
 	</div>
 </div>
