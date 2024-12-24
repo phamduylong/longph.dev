@@ -37,7 +37,14 @@
 	} from '@skeletonlabs/skeleton';
 	import { Menu, Palette, Github, Linkedin, Mail } from 'lucide-svelte';
 	import { enhance } from '$app/forms';
-	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+	storePopup.set({
+		computePosition,
+		autoUpdate,
+		flip,
+		shift,
+		offset,
+		arrow
+	});
 	initializeStores();
 	const drawerStore = getDrawerStore();
 
@@ -53,18 +60,66 @@
 
 	// Theme Settings
 	const themes = Object.freeze([
-		{ type: 'skeleton', name: 'Skeleton', icon: '💀' },
-		{ type: 'wintry', name: 'Wintry', icon: '🌨️' },
-		{ type: 'modern', name: 'Modern', icon: '🤖' },
-		{ type: 'rocket', name: 'Rocket', icon: '🚀' },
-		{ type: 'metal', name: 'Metal', icon: '⚙️' },
-		{ type: 'thunder', name: 'Thunder', icon: '⚡' },
-		{ type: 'seafoam', name: 'Seafoam', icon: '🧜‍♀️' },
-		{ type: 'vintage', name: 'Vintage', icon: '📺' },
-		{ type: 'sahara', name: 'Sahara', icon: '🏜️' },
-		{ type: 'hamlindigo', name: 'Hamlindigo', icon: '👔' },
-		{ type: 'gold-nouveau', name: 'Gold Nouveau', icon: '💫' },
-		{ type: 'crimson', name: 'Crimson', icon: '⭕' }
+		{
+			type: 'skeleton',
+			name: 'Skeleton',
+			icon: '💀'
+		},
+		{
+			type: 'wintry',
+			name: 'Wintry',
+			icon: '🌨️'
+		},
+		{
+			type: 'modern',
+			name: 'Modern',
+			icon: '🤖'
+		},
+		{
+			type: 'rocket',
+			name: 'Rocket',
+			icon: '🚀'
+		},
+		{
+			type: 'metal',
+			name: 'Metal',
+			icon: '⚙️'
+		},
+		{
+			type: 'thunder',
+			name: 'Thunder',
+			icon: '⚡'
+		},
+		{
+			type: 'seafoam',
+			name: 'Seafoam',
+			icon: '🧜‍♀️'
+		},
+		{
+			type: 'vintage',
+			name: 'Vintage',
+			icon: '📺'
+		},
+		{
+			type: 'sahara',
+			name: 'Sahara',
+			icon: '🏜️'
+		},
+		{
+			type: 'hamlindigo',
+			name: 'Hamlindigo',
+			icon: '👔'
+		},
+		{
+			type: 'gold-nouveau',
+			name: 'Gold Nouveau',
+			icon: '💫'
+		},
+		{
+			type: 'crimson',
+			name: 'Crimson',
+			icon: '⭕'
+		}
 	]);
 
 	/**
@@ -155,7 +210,11 @@
 						<!-- trigger -->
 						<button
 							class="btn hover:variant-soft-primary"
-							use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
+							use:popup={{
+								event: 'click',
+								target: 'theme',
+								closeQuery: 'a[href]'
+							}}
 						>
 							<span class="hidden md:inline-block"> Themes </span>
 						</button>
@@ -173,7 +232,11 @@
 				<div class="md:hidden space-x-8">
 					<button
 						class="inline-block"
-						use:popup={{ event: 'click', target: 'theme', closeQuery: 'a[href]' }}
+						use:popup={{
+							event: 'click',
+							target: 'theme',
+							closeQuery: 'a[href]'
+						}}
 						title="Theme switch button"><Palette /></button
 					>
 					<a
@@ -255,7 +318,10 @@
 			</div>
 			<!-- Flex line break -->
 			<div class="basis-full h-0"></div>
-			<p class="text-sm">&copy; {new Date().getFullYear()} Long Pham. All Rights Reserved.</p>
+			<p class="text-sm">
+				&copy; {new Date().getFullYear()}
+				Long Pham. All Rights Reserved.
+			</p>
 		</div>
 	</svelte:fragment>
 </AppShell>
