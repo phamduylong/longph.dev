@@ -28,5 +28,7 @@
 		{emotes[Math.floor(Math.random() * emotes.length)]}
 		Something wrong happened here...
 	</h1>
-	<h1 class="h1 my-10">{$page.error?.message}</h1>
+	<h1 class="h1 my-10">
+		{$page.error?.message}
+	</h1>
 </div>

@@ -1,27 +1,25 @@
 <script>
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { Pen } from 'lucide-svelte';
-	import { browser } from '$app/environment';
+	import { createEventDispatcher } from 'svelte';
 	/**
 	 * @type {{ id:string,
 	 * 					  title: string,
-	 * 					  content: string,
 	 *                    tags: string[],
-	 * 				  	  snippets: [{ lang: string, code: string }],
-	 * 				      toc: boolean,
-	 *                    created: string,
-	 *                    updated: string }}
+	 *                    created: Date,
+	 *                    updated: Date }}
 	 */
 	export let post;
 	/**
 	 * Process date string to human readable format
 	 * Shows day, month and year if the year is not the current year
-	 * @param string {string}
+	 * @param date {Date}
 	 */
-	function processDateString(string) {
-		let date = new Date(string);
+	function processDateString(date) {
 		return `${date.toLocaleString('default', { month: 'short' })} ${date.getDate()} ${date.getFullYear() < new Date().getFullYear() ? date.getFullYear() : ''}`;
 	}
+
+	const evDispatcher = createEventDispatcher();
 </script>
 
 <div class="card p-4 space-y-2 max-h-fit grid-cols-1">
@@ -31,25 +29,30 @@
 		<div class="inline">Long Pham</div>
 	</a>
 
-	<a href="/blog/{post.id}"><h3 class="h3 font-bold p-2 hover:text-primary-600">{post.title}</h3></a
+	<a href="/blog/post/{post.id}"
+		><h3 class="h3 font-bold p-2 hover:text-primary-600">
+			{post.title}
+		</h3></a
 	>
 
 	<div class="flex justify-between items-center">
 		<div class="max-w-[70%] md:max-w-[50%]">
 			{#each post.tags as tag}
-				<a
+				<button
 					data-sveltekit-preload-data
 					class="chip variant-filled-secondary m-1"
-					href="{browser ? window.location.origin : ''}/blog?tag={tag}"
-					><span class="!text-primary-600 mr-px">#</span>{tag}</a
+					on:click={() => evDispatcher('tagselected', tag)}
+					><span class="!text-primary-600 mr-px">#</span>{tag}</button
 				>
 			{/each}
 		</div>
 		<div
 			class="space-x-2 mx-1 md:mx-2 self-end text-sm"
-			title="Last edited on {new Date(post.updated).toTimeString()}"
+			title="Last edited on {post.updated.toDateString()} {post.updated.toTimeString()}"
 		>
-			<Pen size={16} class="inline" /><i class="inline cursor-default">{processDateString(post.updated)}</i>
+			<Pen size={16} class="inline" /><i class="inline cursor-default"
+				>{processDateString(post.updated)}</i
+			>
 		</div>
 	</div>
 </div>
