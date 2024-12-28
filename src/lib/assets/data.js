@@ -56,4 +56,35 @@ const projects = Object.freeze([
 	}
 ]);
 
-export { section_data, projects };
+const blogs = Object.freeze([
+	{
+		id: 'osw44p0y2g73d6s',
+		title: "JavaScript's console object is more than just a console.log()",
+		tags: ['console', 'javascript', 'typescript', 'programming'],
+		updated: new Date(2024, 10, 14, 19, 34, 49),
+		created: new Date(2024, 10, 3, 14, 3, 57)
+	},
+	{
+		id: 'h9evcysg5kckd8c',
+		title: 'LeetCode Solutions',
+		tags: ['leet-code', 'programming', 'csharp', 'javascript', 'typescript', 'c++'],
+		updated: new Date(2024, 10, 23, 16, 7, 51),
+		created: new Date(2024, 9, 31, 20, 26, 49)
+	},
+	{
+		id: 'hd0xhsmxavrx3dv',
+		title: 'Choose your first open source project carefully.',
+		tags: ['open-source', 'github', 'programming'],
+		updated: new Date(2024, 10, 3, 12, 51, 33),
+		created: new Date(2024, 9, 28, 22, 20, 12)
+	},
+	{
+		id: 'wx694lgsvrga1c7',
+		title: 'Why VB.NET might be better than what you think it is',
+		tags: ['visual-basic', '.net', 'vb', 'programming'],
+		updated: new Date(2024, 10, 3, 12, 51, 33),
+		created: new Date(2024, 9, 28, 22, 20, 12)
+	}
+]);
+
+export { section_data, projects, blogs };
