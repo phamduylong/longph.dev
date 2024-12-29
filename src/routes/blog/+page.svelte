@@ -2,21 +2,18 @@
 	import BlogPostPreviewCard from '$lib/components/BlogPostPreviewCard.svelte';
 	import { InputChip, Autocomplete } from '@skeletonlabs/skeleton';
 	/**
-	 * @type {{ posts: { id:string,
+	 * @type {{ blogs: { id:string,
 	 * 					  title: string,
-	 * 					  content: string,
 	 *                    tags: string[],
-	 * 				  	  snippets: [{ lang: string, code: string }],
-	 * 				      toc: boolean,
-	 *                    created: string,
-	 *                    updated: string }[] }}
+	 *                    created: Date,
+	 *                    updated: Date }[] }}
 	 */
-	export let data;
+	import { blogs } from '$lib/assets/data';
 	let inputChip = '';
 	/**
 	 * @type {{ value: string, label: string }[]}
 	 */
-	$: options = [...new Set(data.posts.map((item) => item.tags).flat())].map((value) => ({
+	$: options = [...new Set(posts.map((item) => item.tags).flat())].map((value) => ({
 		label: value,
 		value: value
 	}));
@@ -29,15 +26,21 @@
 	 * @param event {{ detail: { value: string, label: string } }}
 	 */
 	function onFlavorSelection(event) {
-		chosenTags = [...chosenTags, event.detail.value];
+		if (!chosenTags.includes(event.detail.value)) {
+			chosenTags = [...chosenTags, event.detail.value];
+			inputChip = '';
+		}
 	}
 
-	$: posts = data.posts.filter((post) => {
-		if (chosenTags.length === 0) {
-			return true;
-		}
-		return chosenTags.every((tag) => post.tags.includes(tag));
-	});
+	// Filter posts based on chosen tags and sort by updated date
+	$: posts = blogs
+		.filter((post) => {
+			if (chosenTags.length === 0) {
+				return true;
+			}
+			return chosenTags.every((tag) => post.tags.includes(tag));
+		})
+		.sort((a, b) => b.updated.getTime() - a.updated.getTime());
 </script>
 
 <svelte:head>
@@ -68,7 +71,14 @@
 			</div>
 		</div>
 		{#each posts as post}
-			<BlogPostPreviewCard {post} />
+			<BlogPostPreviewCard
+				{post}
+				on:tagselected={(e) => {
+					if (!chosenTags.includes(e.detail)) {
+						chosenTags = [...chosenTags, e.detail];
+					}
+				}}
+			/>
 		{/each}
 	</div>
 </div>
