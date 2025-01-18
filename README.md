@@ -14,8 +14,8 @@ I have a page to display all my projects. I suppose you can call it a portfolio 
 
 ### CV
 
-I have my CV as a static file available [here](https://longph.com/resume.pdf). Can be seen on the page as well.
+I have my CV as a static file available [here](https://longph.dev/resume.pdf). Can be seen on the page as well.
 
 ### Blog
 
-I don't have the habit of writing anything but it feels fun to publish random thoughts to the world sometimes. I have a frequently updated threads dedicated for LeetCode solutions as well. The thread can be found [here](https://longph.com/blog/h9evcysg5kckd8c).
+I don't have the habit of writing anything but it feels fun to publish random thoughts to the world sometimes. I have a frequently updated threads dedicated for LeetCode solutions as well. The thread can be found [here](https://longph.dev/blog/h9evcysg5kckd8c).
