@@ -40,7 +40,7 @@ const projects = Object.freeze([
 		name: 'cli',
 		alt: 'CLI website',
 		repoUrl: 'https://github.com/phamduylong/cli',
-		demoUrl: 'https://cli.longph.com/'
+		demoUrl: 'https://cli.longph.dev/'
 	},
 	{
 		name: 'quotes',
