@@ -16,7 +16,20 @@
 	 * @param date {Date}
 	 */
 	function processDateString(date) {
-		return `${date.toLocaleString('default', { month: 'short' })} ${date.getDate()} ${date.getFullYear() < new Date().getFullYear() ? date.getFullYear() : ''}`;
+		const day = date.getDate();
+		const month = date.getMonth();
+		const year = date.getFullYear();
+		let displayYear = false;
+		const newDate = new Date();
+
+		if (
+			newDate.getFullYear() - year > 1 ||
+			(newDate.getFullYear() - year <= 1 &&
+				(newDate.getMonth() > month || (newDate.getMonth() === month && newDate.getDate() < day)))
+		) {
+			displayYear = true;
+		}
+		return `${date.toLocaleString('default', { month: 'short' })} ${date.getDate()} ${displayYear ? date.getFullYear() : ''}`;
 	}
 
 	const evDispatcher = createEventDispatcher();
