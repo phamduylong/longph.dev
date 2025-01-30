@@ -25,8 +25,8 @@
 				developer and a web developer at
 				<a class="anchor" target="_blank" href="https://digia.com/en" rel="external">Digia</a>
 				🇫🇮. In my free time, I fancy a bit of open source browsing, investing in tech startups and listening
-				to tech podcasts. I'm open to new opportunities and challenges, feel free to reach out
-				<a class="anchor" href="#contact">here</a>.
+				to tech podcasts. I'm open to new opportunities and challenges, feel free to
+				<a class="anchor" href="/contact">reach out</a>.
 			</p>
 		</div>
 		{#each section_data as section}
