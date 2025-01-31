@@ -3,6 +3,11 @@
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { storeTheme } from '$lib/stores/themeStore';
 	import { browser } from '$app/environment';
+	
+	// Vercel analytics
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
