@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	export let classes = '';
+	export let classes = 'container';
 	/**
 	 * Remove whitespaces from a string
 	 * @param str {string}
