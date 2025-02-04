@@ -41,7 +41,7 @@
 			version of Python with less features? First of all, the collection of features it offers. The
 			amount of built-in features for VB.NET feels just right for me. Not too much that it turns
 			into a feature hell in C++ is trying to be, but not as limited as C (sorry to the C freaks out
-			there). Along with its features, I find the syntax very verbose and English-like. For example,
+			there). Along with its features, I find the syntax very verbose and English-like. For example,
 			generic syntax is written as so in VB.NET:
 
 			<CodeBlock
