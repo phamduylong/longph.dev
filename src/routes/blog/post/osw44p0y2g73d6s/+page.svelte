@@ -223,9 +223,9 @@
 			I suggest running this in the terminal or browser console and see the effect yourself, or just
 			spend time playing around with it.<br /><br />
 
-			Hopefully you learned something you didn't know from this post, or simple had a good time. I
-			was amazed when I found these as it makes my experience with JavaScript a bit less boring.
-			I'll definitely use some of these in my projects in the future and so should you 😉
+			Hopefully you learned something from this post, or just simply had a good time. I was amazed
+			when I found these as it makes my experience with JavaScript a touch less boring. I'll
+			definitely use some of these in my projects in the future and so should you 😉
 		</article>
 	</div>
 </div>
