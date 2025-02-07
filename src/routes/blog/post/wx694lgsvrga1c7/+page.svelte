@@ -118,8 +118,9 @@
 			/><br />
 
 			Though I cannot say that a lot of people agree with my opinion, but it has been a pleasure so
-			far to work with VB.NET. I do think it's an underrated options for developers who are into
-			desktop app (Windows, specifically). If that person is you, do check it out 😉
+			far to work with VB.NET. I do think it's an underrated option for developers who are into
+			desktop app and the .NET ecosystem in general. If that person is you, do consider VB.NET
+			because it is an awesome language to work with.
 		</article>
 	</div>
 </div>
