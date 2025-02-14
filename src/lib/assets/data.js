@@ -7,11 +7,28 @@ const section_data = Object.freeze([
 	{
 		title: 'Work Experiences',
 		content: `Currently, I'm working as Junior Software Developer at <a class="anchor" href="https://digia.com/en/" target="_blank" rel="external">Digia</a>. 
-				Digia is a Finnish SaaS company that provides Financial Solutions to banks in Finland and Sweden. My main role is to develop and maintain the software 
-				according to the customers requirements. I work with <a class="anchor" href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="external">C#</a>,
+				Digia is a Finnish SaaS company that provides solutions and products to major financial sectors in Finland and Sweden. My main responsibilities at Digia include:
+				<ol class="list my-4">
+					<li>
+						<span class="flex-auto">&#8680;&nbsp;Maintaining software products</span>
+					</li>
+					<li>
+						<span class="flex-auto">&#8680;&nbsp;Implementing new features into products</span>
+					</li>
+					<li>
+						<span class="flex-auto">&#8680;&nbsp;Constructing delivery packages for customers</span>
+					</li>
+					<li>
+						<span class="flex-auto">&#8680;&nbsp;Improving and optimizing legacy code</span>
+					</li>
+				</ol>
+				I work with <a class="anchor" href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="external">C#</a>,
 				<a class="anchor" href="https://learn.microsoft.com/en-us/dotnet/visual-basic/" target="_blank" rel="external">VB.NET</a>,
-				<a class="anchor" href="https://www.microsoft.com/en-us/sql-server/" target="_blank" rel="external">SQL Server</a> and
-			    <a class="anchor" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">JavaScript</a> on a daily basis.`
+				<a class="anchor" href="https://www.microsoft.com/en-us/sql-server/" target="_blank" rel="external">SQL Server</a>,
+			    <a class="anchor" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">JavaScript</a> 
+				and <a class="anchor" href="https://jquery.com/" target="_blank" rel="external">jQuery</a> on a daily basis. Occasionally,
+				I build features that requires interacting with <a class="anchor" href="https://www.oracle.com/database/" target="_blank" rel="external">Oracle databases</a>
+				and <a class="anchor" href="https://www.oracle.com/database/technologies/appdev/plsql.html" target="_blank" rel="external">PL/SQL</a> scripting.`
 	},
 	{
 		title: 'Projects',
