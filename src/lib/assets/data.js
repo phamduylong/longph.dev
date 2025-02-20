@@ -8,20 +8,20 @@ const section_data = Object.freeze([
 		title: 'Work Experiences',
 		content: `Currently, I'm working as Junior Software Developer at <a class="anchor" href="https://digia.com/en/" target="_blank" rel="external">Digia</a>. 
 				Digia is a Finnish SaaS company that provides solutions and products to major financial sectors in Finland and Sweden. My main responsibilities at Digia include:
-				<ol class="list my-4">
+				<ul class="my-4 list-disc list-inside space-y-1">
 					<li>
-						<span class="flex-auto">&#8680;&nbsp;Maintaining software products</span>
+						<span>Maintaining software products</span>
 					</li>
 					<li>
-						<span class="flex-auto">&#8680;&nbsp;Implementing new features into products</span>
+						<span>Implementing new features into products</span>
 					</li>
 					<li>
-						<span class="flex-auto">&#8680;&nbsp;Constructing delivery packages for customers</span>
+						<span>Constructing delivery packages for customers</span>
 					</li>
 					<li>
-						<span class="flex-auto">&#8680;&nbsp;Improving and optimizing legacy code</span>
+						<span>Improving and optimizing legacy code</span>
 					</li>
-				</ol>
+				</ul>
 				I work with <a class="anchor" href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="external">C#</a>,
 				<a class="anchor" href="https://learn.microsoft.com/en-us/dotnet/visual-basic/" target="_blank" rel="external">VB.NET</a>,
 				<a class="anchor" href="https://www.microsoft.com/en-us/sql-server/" target="_blank" rel="external">SQL Server</a>,
