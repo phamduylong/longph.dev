@@ -1,6 +1,7 @@
 <script>
 	import { CodeBlock } from '@skeletonlabs/skeleton';
 	import { TableOfContents, tocCrawler } from '@skeletonlabs/skeleton';
+	import { toDayOfWeek } from '$lib/helper/common';
 	const title = `LeetCode Solutions`;
 	// Year, month's index (so month - 1), day, hour, minute, second
 	// Let's keep createdDate here as well just to be future proof
@@ -11,8 +12,11 @@
 <TableOfContents class="hidden xl:block fixed top-1/4 w-64 p-2 mx-4 h-1/2 overflow-scroll" />
 <div>
 	<div class="text-sm text-center">
-		{updatedDate.toLocaleString('default', { month: 'long' })}
-		{updatedDate.getDate()}, {updatedDate.getFullYear()}
+		{updatedDate.toLocaleString('default', { month: 'short' })}
+		{updatedDate.getDate()}, {updatedDate.getFullYear().toString().substring(2)} ({toDayOfWeek(
+			updatedDate.getDay(),
+			true
+		)})
 	</div>
 
 	<div

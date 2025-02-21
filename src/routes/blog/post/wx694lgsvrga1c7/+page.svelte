@@ -1,5 +1,6 @@
 <script>
 	import { CodeBlock } from '@skeletonlabs/skeleton';
+	import { toDayOfWeek } from '$lib/helper/common';
 	const title = `Why VB.NET might be better than what you think it is`;
 	// Year, month's index (so month - 1), day, hour, minute, second
 	// Let's keep createdDate here as well just to be future proof
@@ -9,8 +10,11 @@
 
 <div>
 	<div class="text-sm text-center">
-		{updatedDate.toLocaleString('default', { month: 'long' })}
-		{updatedDate.getDate()}, {updatedDate.getFullYear()}
+		{updatedDate.toLocaleString('default', { month: 'short' })}
+		{updatedDate.getDate()}, {updatedDate.getFullYear().toString().substring(2)} ({toDayOfWeek(
+			updatedDate.getDay(),
+			true
+		)})
 	</div>
 
 	<div
