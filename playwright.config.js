@@ -1,8 +1,13 @@
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
 	webServer: {
-		command: 'npm run build && npm run preview',
-		port: 4173
+		command: 'pnpm build && pnpm preview',
+		url: 'http://localhost:4173',
+		stderr: 'pipe',
+		stdout: 'pipe'
+	},
+	use: {
+		baseURL: 'http://localhost:4173'
 	},
 	testDir: 'tests',
 	testMatch: /(.+\.)?(test|spec)\.[jt]s/
