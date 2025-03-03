@@ -11,3 +11,10 @@ test('layout has navbar', async ({ page }) => {
 	await expect(page.getByTestId('app-bar').getByRole('link', { name: 'GitHub' })).toBeVisible();
 	await expect(page.getByTestId('app-bar').getByText('Themes')).toBeVisible();
 });
+
+test('layout has footer', async ({ page }) => {	
+	await page.goto('/');
+	await expect(page.locator("#page-footer").locator("#contact")).toBeVisible();
+	await expect(page.locator("#page-footer").getByText('© 2025 Long Pham. All Rights Reserved.')).toBeVisible();
+
+});

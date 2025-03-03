@@ -1,6 +1,7 @@
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
 	webServer: {
+		reuseExistingServer: true,
 		command: 'pnpm build && pnpm preview',
 		url: 'http://localhost:4173',
 		stderr: 'pipe',
