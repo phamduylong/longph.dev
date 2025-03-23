@@ -19,3 +19,8 @@ test('layout has footer', async ({ page }) => {
 		page.locator('#page-footer').getByText('© 2025 Long Pham. All Rights Reserved.')
 	).toBeVisible();
 });
+
+test('content renders', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.locator('#page')).toBeVisible();
+});

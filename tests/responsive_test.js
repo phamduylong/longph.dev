@@ -28,3 +28,8 @@ test('drawer shows on click', async ({ page }) => {
 	await expect(page.getByTestId('drawer').getByRole('link', { name: 'Blog' })).toBeVisible();
 	await expect(page.getByTestId('drawer').getByRole('link', { name: 'Contact' })).toBeVisible();
 });
+
+test('content renders', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.locator('#page')).toBeVisible();
+});
