@@ -29,6 +29,7 @@ test('drawer shows on click', async ({ page }) => {
 	await expect(page.getByTestId('drawer').getByRole('link', { name: 'Contact' })).toBeVisible();
 });
 
+// FIXME: some race condition here?
 test('navbar links work', async ({ page }) => {
 	// Test navigation for the "Projects" link
 	await page.getByTestId('app-bar').getByRole('link', { name: 'Projects' }).click();
