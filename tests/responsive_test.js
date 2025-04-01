@@ -29,6 +29,33 @@ test('drawer shows on click', async ({ page }) => {
 	await expect(page.getByTestId('drawer').getByRole('link', { name: 'Contact' })).toBeVisible();
 });
 
+// FIXME: some race condition here?
+test('navbar links work', async ({ page }) => {
+	// Test navigation for the "Projects" link
+	await page.getByTestId('drawer').getByRole('link', { name: 'Projects' }).click();
+	await page.waitForURL('/projects');
+	await page.goto('/');
+
+	// Test navigation for the "CV" link
+	await page.getByTestId('drawer').getByRole('link', { name: 'CV' }).click();
+	await page.waitForURL('/cv');
+	// Start waiting for download before clicking. Note no await.
+	const downloadPromise = page.waitForEvent('download');
+	await page.getByText('Download file').click();
+	const download = await downloadPromise;
+	expect(download).toBeTruthy();
+
+	// Test navigation for the "Blog" link
+	await page.getByTestId('drawer').getByRole('link', { name: 'Blog' }).click();
+	await page.waitForURL('/blog');
+	await page.goto('/');
+
+	// Test navigation for the "Contact" link
+	await page.getByTestId('drawer').getByRole('link', { name: 'Contact' }).click();
+	await page.waitForURL('/contact');
+	await page.goto('/');
+});
+
 test('content renders', async ({ page }) => {
 	await page.goto('/');
 	await expect(page.locator('#page')).toBeVisible();
