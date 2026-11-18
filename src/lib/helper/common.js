@@ -2,6 +2,7 @@
  * Transform a string to title case
  * @param {string} str
  * @returns Title-cased string
+ * @example this is it -> This Is It
  */
 const toTitleCase = (str) => {
 	const splitStr = str.toLowerCase().split(' ');
@@ -15,6 +16,7 @@ const toTitleCase = (str) => {
  * Convert a number to day of week
  * @param {number} day
  * @param {boolean} short
+ * @example Tuesday -> Tue
  * @returns Day of week
  */
 const toDayOfWeek = (day, short) => {
