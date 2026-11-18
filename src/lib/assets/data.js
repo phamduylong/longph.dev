@@ -2,24 +2,24 @@ const section_data = Object.freeze([
 	{
 		title: 'Educations',
 		content: `I enrolled to the IT programme at <a class="anchor" href="https://www.metropolia.fi/en" target="_blank" rel="external">Metropolia UAS</a> in 2020.
-				It is the biggest college in Finland with an interesting curriculum so I decided to give it a shot. After 4 years of grinding, I have graduated with a GPA of 3.2/4.`
+				It is the biggest college in Finland with an interesting curriculum so I decided to give it a shot. After 4 years of grinding, I have graduated with a GPA of 3.2.`
 	},
 	{
 		title: 'Work Experiences',
-		content: `Currently, I'm working as Junior Software Developer at <a class="anchor" href="https://digia.com/en/" target="_blank" rel="external">Digia</a>. 
-				Digia is a Finnish SaaS company that provides solutions and products to major financial sectors in Finland and Sweden. My main responsibilities at Digia include:
+		content: `Currently, I'm working as Software Developer at <a class="anchor" href="https://digia.com/en/" target="_blank" rel="external">Digia Oy</a>. 
+				Digia is a Finnish SaaS company that provides solutions and products to major banks and financial institutions in Finland and Sweden. My main responsibilities at Digia include:
 				<ul class="my-4 list-disc list-inside space-y-1">
 					<li>
-						<span>Maintaining software products</span>
+						<span>Maintaining scalable software products</span>
 					</li>
 					<li>
-						<span>Implementing new features into products</span>
+						<span>Take part in designing specs and implementing new features</span>
 					</li>
 					<li>
 						<span>Constructing delivery packages for customers</span>
 					</li>
 					<li>
-						<span>Improving and optimizing legacy code</span>
+						<span>Leverage AI tools to improve and optimize legacy code</span>
 					</li>
 				</ul>
 				I work with <a class="anchor" href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="external">C#</a>,

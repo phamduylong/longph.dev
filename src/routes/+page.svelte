@@ -20,11 +20,11 @@
 				background="bg-secondary-500"
 			/>
 			<p>
-				I'm a software engineer who enjoys solving problems and the amount of dopamine that it
-				brings. I have 2 years of experience in the industry, working as both a desktop app
-				developer and a web developer at
-				<a class="anchor" target="_blank" href="https://digia.com/en" rel="external">Digia</a>
-				🇫🇮 In my free time, I fancy a bit of open source browsing and listening to tech podcasts. I'm
+				I'm a software engineer who enjoys solving problems and discussing technical solutions. I
+				have had more than three years of professional experience under my belt, working as both a
+				desktop app developer and a web developer at
+				<a class="anchor" target="_blank" href="https://digia.com/en" rel="external">Digia Oy</a>.
+				In my free time, I fancy a bit of open source browsing and listening to tech podcasts. I'm
 				open to new opportunities and challenges, feel free to
 				<a class="anchor" href="/contact">reach out</a>.
 			</p>
